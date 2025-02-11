@@ -1,6 +1,6 @@
 #include "ShootingState.h"
 
-ShootingState::ShootingState(float shootTime, Gun* gun) : States(gun), mShootTime(shootTime)
+ShootingState::ShootingState(float shootTime, Gun* gun) : States(gun), mShootTime(shootTime), mShootProgress(shootTime)
 {
 
 }

@@ -1,7 +1,7 @@
 #include "ReloadingState.h"
 #include "ShootingState.h"
 
-ReloadingState::ReloadingState(float reloadTime, Gun* gun) : States(gun), mReloadTime(reloadTime)
+ReloadingState::ReloadingState(float reloadTime, Gun* gun) : States(gun), mReloadTime(reloadTime), mReloadProgress(reloadTime)
 {
 
 }

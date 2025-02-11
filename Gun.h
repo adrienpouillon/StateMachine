@@ -26,10 +26,6 @@ public:
 protected:
 	int mAmmo;
 	int mCapacity;
-	int mReloadTime;
-	int mShootTime;
-	float mReloadProgress;
-	float mShootProgress;
 
 	std::vector<States*> mAllState;
 	/*const char** mAllState;*/

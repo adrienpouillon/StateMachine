@@ -37,7 +37,7 @@ int main()
         auto start = std::chrono::high_resolution_clock::now();
 
         gun->Update(dt);
-        std::cout << dt << std::endl;
+        //std::cout << dt << std::endl;
         endGame = Action(gun);
 
         

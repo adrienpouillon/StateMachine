@@ -28,11 +28,6 @@ void Gun::Init(int capacity, int reloadTime, int shootTime)
 
 	mCapacity = capacity;
 	mAmmo = capacity;
-	
-	mReloadTime = reloadTime;
-	mShootTime = shootTime;
-	mReloadProgress = 0.f;
-	mShootProgress = 0.f;
 }
 
 void Gun::Update(float deltaTime)
@@ -44,29 +39,12 @@ void Gun::Update(float deltaTime)
 		{
 			shooting->Update(deltaTime);
 		}
-		/*mShootProgress -= deltaTime;
-		if (mShootProgress < 0.f)
-		{
-			if (mAmmo <= 0)
-			{
-				TransitionTo(State::Empty);
-			}
-			else
-			{
-				TransitionTo(State::Loaded);
-			}
-		}*/
 		break;
 	case State::Reloading:
 		if (ReloadingState* reloading = GetState<ReloadingState>())
 		{
 			reloading->Update(deltaTime);
 		}
-		/*mReloadProgress -= deltaTime;
-		if (mReloadProgress < 0.f)
-		{
-			TransitionTo(State::Full);
-		}*/
 		break;
 	}
 }
@@ -94,7 +72,7 @@ void Gun::Shoot()
 		//tirer
 		if (ShootingState* shooting = GetState<ShootingState>())
 		{
-			shooting->SetShootProgress(mShootTime);
+			shooting->Start();
 		}
 		AmmoLessLess();
 		std::cout << "Bang !" << std::endl;
@@ -136,7 +114,7 @@ void Gun::SetMaxAmmo()
 
 void Gun::AmmoLessLess()
 {
-	SetAmmo(mAmmo--);
+	SetAmmo(mAmmo - 1);
 }
 
 int Gun::GetAmmo()
