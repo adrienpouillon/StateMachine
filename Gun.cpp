@@ -121,3 +121,12 @@ int Gun::GetAmmo()
 {
 	return mAmmo;
 }
+
+Gun::~Gun()
+{
+	int lenght = mAllState.size();
+	for (int i = 0; i < lenght; i++)
+	{
+		delete mAllState[i];
+	}
+}

@@ -65,6 +65,8 @@ public:
 
 	template<typename T>
 	T* GetState();
+
+	~Gun();
 };
 
 template<typename T>
