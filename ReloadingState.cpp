@@ -8,7 +8,7 @@ ReloadingState::ReloadingState(float reloadTime, Gun* gun) : States(gun), mReloa
 
 void ReloadingState::Start()
 {
-	SetShootProgress(mReloadTime);
+	SetReloadProgress(mReloadTime);
 }
 
 void ReloadingState::Update(float deltaTime)
@@ -20,7 +20,7 @@ void ReloadingState::Update(float deltaTime)
 	}
 }
 
-void ReloadingState::SetShootProgress(float reloadProgress)
+void ReloadingState::SetReloadProgress(float reloadProgress)
 {
 	mReloadProgress = reloadProgress;
 }

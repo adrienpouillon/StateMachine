@@ -12,7 +12,7 @@ public:
 
 	virtual void Update(float deltaTime);
 
-	void SetShootProgress(float reloadingProgress);
+	void SetReloadProgress(float reloadingProgress);
 
 };
 
